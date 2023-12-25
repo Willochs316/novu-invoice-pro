@@ -19,6 +19,10 @@ connectToDatabase();
 const invoiceRoutes = require("./routes/invoiceRoute");
 app.use("/api/invoices", invoiceRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Welcome to Novu Invoice API.");
+});
+
 let options = { format: "A4" };
 
 app.post("/send-pdf", (req, res) => {
@@ -35,7 +39,7 @@ app.post("/send-pdf", (req, res) => {
 
     novu.trigger("invoice-notification", {
       to: {
-        subscriberId: "63695b559e04bb11b56924df",
+        subscriberId: "658617a57ab43529ec973b72",
         email: `${email}`,
       },
       payload: {
