@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const InvoiceModel = require("../models/invoiceModel");
 
-//Create invoice
+// Create an invoice
 const createInvoice = async (req, res) => {
   try {
     const {
@@ -36,7 +36,7 @@ const createInvoice = async (req, res) => {
   }
 };
 
-// update invoice
+// Edit invoice
 const editInvoice = async (req, res) => {
   const { id: _id } = req.params;
   const invoice = req.body;
